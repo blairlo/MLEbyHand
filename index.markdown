@@ -23,9 +23,9 @@ weight: 2
 
 ### What is difference between OLS and MLE?
 
-OLS and MLE both estimate a model made up of parameter estimates that describes the relationship between two or more variables. Most of time we are interested in a point estimates, or the mean impacts of some random variable X on outcome Y in the population, and the uncertainty around its mean (often referred to as  Greek betas, sigma, etc.). A fundamental problem for all model estimates and methods of deriving them is that the population cannot be fully observed in most cases. If it were, statistical methods would not be needed. Estimates, regardless of how they were derived, instead approximate relationships in the population using samples.
+OLS and MLE both estimate a model made up of parameters that describes the relationship between two or more variables. Most of time we are interested in a point estimate, or the mean impacts of some random variable X on outcome Y in the population, and the uncertainty around its mean (often referred to as Greek betas, sigma, etc.). A fundamental problem for all model estimates and methods of deriving them is that the population cannot be fully observed. If it were, statistical methods would not be needed. Estimates, regardless of how they were derived, instead approximate relationships in the population using samples.
 
-The three primary estimation techniques above could also be technically applied to an infinite different number model types. Selecting a model and its estimation procedure should be based on the question we are asking, the observations available, and most important the the process that we think generated them (linear, binomial, poison, mixed etc.), along with some more formal comparisons of fit and explanatory power which I'll discuss below in 1b.
+Selecting a model and its estimation procedure should be based on the question we are asking, the observations available, and most important the the process that we think generated their outcomes (linear, binomial, poison, mixed etc.), along with some more formal comparisons of fit and explanatory power which I'll discuss below.
 
 #### **OLS Description**
 * Ordinary least squares (OLS) estimates using a fixed set of linear perimeters that minimizes the sum of squared residuals, where residuals are made up of the difference between the fitted "regression" line and the observed data points, Y. The outcome of this OLS fitting process for 1 variable is 3 parameters--alpha, beta, and and error term. That is, an intercept, a slope, and an error that represents all other factors effecting Y, but not observed. 
@@ -437,7 +437,7 @@ Will give us a probability >.5 and might be a starting point for negotiations in
 
 ### Count models
 
-The job of the Poisson Regression model is to fit the observed counts y to the regression matrix X via a link-function that expresses the rate vector λ as a function of, 1) the regression coefficients β and 2) the regression matrix X. This link function keeps λ non-negative even when the regressors X or the regression coefficients β have negative values. This is a requirement for count based data.
+The job of the Poisson model is to fit the observed counts y to the regression matrix X via a link-function that expresses the rate vector λ as a function of, 1) the regression coefficients β and 2) the regression matrix X. This link function keeps λ non-negative even when the regressors X or the regression coefficients β have negative values. This is a requirement for count based data.
 
 **Predicted Turtle Impacts (Count Dependent Var)**
 If we are concerned with zeroing in on turtle counts in particular, the binary response model is not helpful, and the OLS estimator is still bias. Instead we might choose a poisson model whos assumptions about the distribution of y are more consistent with our data. Here we assume that that y >0, can range above 1 and has a variance equal to its mean.
